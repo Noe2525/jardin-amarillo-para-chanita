@@ -41,6 +41,8 @@ const opened = new Set();
 let dragging = false;
 let sliderProgress = 0;
 
+window.scrollTo(0, 0);
+
 function updateSlider(clientX) {
   const box = slider.getBoundingClientRect();
   const max = box.width - handle.offsetWidth - 12;
@@ -57,6 +59,8 @@ function enterGarden() {
     welcome.hidden = true;
     garden.classList.add('visible');
     garden.setAttribute('aria-hidden', 'false');
+    garden.scrollTop = 0;
+    window.scrollTo(0, 0);
   }, 780);
 }
 
@@ -109,7 +113,8 @@ function closeAndSave() {
       garden.setAttribute('aria-hidden', 'true');
       finale.classList.add('visible');
       finale.setAttribute('aria-hidden', 'false');
-      finale.scrollIntoView({ behavior: 'smooth' });
+      finale.scrollTop = 0;
+      window.scrollTo(0, 0);
     }, 450);
   }
 }
@@ -126,5 +131,6 @@ document.querySelector('#restart').addEventListener('click', () => {
   finale.setAttribute('aria-hidden', 'true');
   garden.classList.add('visible');
   garden.setAttribute('aria-hidden', 'false');
-  garden.scrollIntoView({ behavior: 'smooth' });
+  garden.scrollTop = 0;
+  window.scrollTo(0, 0);
 });
