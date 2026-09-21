@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#f5c641" />
+    <meta name="description" content="Un jardín amarillo creado especialmente para Chanita." />
+    <title>Un jardín para Chanita 💛</title>
+    <link rel="preload" as="image" href="assets/invernadero.png" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="experience" aria-live="polite">
+      <section class="welcome" id="welcome" aria-label="Entrada al jardín">
+        <div class="mist"></div>
+        <div class="door-frame">
+          <div class="door-copy">
+            <span class="eyebrow">Un lugar hecho solo para ti</span>
+            <h1>Chanita, este lugar floreció pensando en ti.</h1>
+            <p>Desliza la luz para abrir la puerta.</p>
+          </div>
+
+          <div class="slider" id="slider">
+            <div class="slider-fill" id="sliderFill"></div>
+            <span class="slider-label">Desliza para entrar</span>
+            <button class="slider-handle" id="sliderHandle" aria-label="Desliza para entrar">❯</button>
+          </div>
+        </div>
+      </section>
+
+      <section class="garden" id="garden" aria-hidden="true">
+        <div class="garden-shade"></div>
+        <header class="garden-heading">
+          <span class="eyebrow">El invernadero secreto</span>
+          <h2>Cinco flores guardan algo que quería decirte</h2>
+          <p>Toca cada flor para hacerla florecer.</p>
+        </header>
+
+        <div class="flowers" id="flowers" role="list" aria-label="Cinco flores con mensajes">
+          <button class="flower flower-1" role="listitem" data-index="0" aria-label="Abrir mensaje 1">
+            <span class="bloom">🌹</span><span class="flower-number">1</span>
+          </button>
+          <button class="flower flower-2" role="listitem" data-index="1" aria-label="Abrir mensaje 2">
+            <span class="bloom">🌷</span><span class="flower-number">2</span>
+          </button>
+          <button class="flower flower-3" role="listitem" data-index="2" aria-label="Abrir mensaje 3">
+            <span class="bloom">🌹</span><span class="flower-number">3</span>
+          </button>
+          <button class="flower flower-4" role="listitem" data-index="3" aria-label="Abrir mensaje 4">
+            <span class="bloom">🌷</span><span class="flower-number">4</span>
+          </button>
+          <button class="flower flower-5" role="listitem" data-index="4" aria-label="Abrir mensaje 5">
+            <span class="bloom">🌹</span><span class="flower-number">5</span>
+          </button>
+        </div>
+
+        <div class="progress-wrap" aria-label="Progreso de flores descubiertas">
+          <div class="progress-dots" id="progressDots">
+            <span></span><span></span><span></span><span></span><span></span>
+          </div>
+          <p id="progressText">0 de 5 flores descubiertas</p>
+        </div>
+      </section>
+
+      <section class="finale" id="finale" aria-hidden="true">
+        <div class="finale-glow"></div>
+        <div class="bouquet-wrap">
+          <img src="assets/ramo.png" alt="Ramo de rosas y tulipanes amarillos para Chanita" />
+        </div>
+        <article class="letter">
+          <span class="eyebrow">Para ti, Chanita</span>
+          <h2>No tuve que buscar la flor más bonita.<br />Ya te había encontrado a ti.</h2>
+          <div class="gold-line"></div>
+          <p>
+            Este jardín guarda un poquito de todo lo bonito que veo en ti:
+            tu sonrisa, tu forma de cuidar, los recuerdos que hacen bien al corazón,
+            lo mucho que admiro de ti y todas las cosas bonitas que aún deseo vivir a tu lado.
+          </p>
+          <p class="signature">Con mucho cariño 💛</p>
+          <button class="restart" id="restart">Volver a recorrer el jardín</button>
+        </article>
+      </section>
+    </main>
+
+    <dialog class="message-card" id="messageCard">
+      <button class="close-card" id="closeCard" aria-label="Cerrar mensaje">×</button>
+      <span class="card-number" id="cardNumber"></span>
+      <span class="card-flower" id="cardFlower">🌹</span>
+      <h3 id="cardTitle"></h3>
+      <p id="cardText"></p>
+      <button class="continue-card" id="continueCard">Guardar esta flor</button>
+    </dialog>
+
+    <script src="script.js"></script>
+  </body>
+</html>
